@@ -21,7 +21,7 @@ dialogo ={
    #Horarios
    ,"cu[aá]l(\S*)|\sser|\sson|\ses|\sese|\sest[aá]|\sest(\S*)|horario|hora\S*|tiempo|":"Abrimos de 7:00 am hasta las 5 de la tarde, solo en circunstancias especiales extendemos el horario"
    ,"qu[eé](\S*)|abrir(\S*)|abren|cerrar|cierran(\S*)|horario|hora\S*|tiempo|":"Abrimos a las 7 y cerramos a las 5" 
-   ,"qui[eé]n(\S*)|\sser|\sson|\ses|\sese|\sest[aá]|\sest(\S*)|encargado(\S*)|": "Heiner medina es el encargado, su numero de telefono es 1234-1234"
+   ,"qui[eé]n(\S*)|\sser|\sson|\ses|\sese|\sest[aá]|\sest(\S*)|encargado(\S*)|": "Heiner medina es el encargado, su numero de telefono es 0416 592 2482"
    ,"d[oó]nde(\S*)|est[aá](\S*)|\sser|\sson|\ses|\sese|\sest[aá]|\sest(\S*)|ubica(\S*)|localiza|": "En Narnia, dentro de su armario magico. Sea discreto"
    ,"c[oó]mo(\S*)|pued(\S*)|permite(\S*)|acepta(\S*)|informar(\S*)|notifica|contact(\S*)|":"Al final de la pagina se encuentran los detalles necesarios. Facilitandoselo nuestro correo empresarial es picFamily@gmail.com"               
        }

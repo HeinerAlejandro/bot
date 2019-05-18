@@ -1,13 +1,24 @@
 
-from ..bot import dialogoBot
+from ..models import Reply
 
-charla = dialogoBot.dialogo
+charla = Reply.objects.all()
 
 class Switcher(object):
        
     def posibles_respuestas(self, pregunta):
         print (pregunta)
-        respuesta = charla.get(pregunta, "No le entiendo, podria ser mas claro en su explicacion")
+
+        respuesta = "No le entiendo, podria ser mas claro en su explicacion"
+        try:
+
+            respuesta = charla.get(replyRegex =  pregunta)
+
+            return respuesta.replyText
+
+        except Exception:
+            pass
+
         return respuesta
+        
 
     

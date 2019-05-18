@@ -1,7 +1,7 @@
 import string
 import re #Expresiones regulares
-from ..bot import switchRespuesta
-from ..bot import regexPalabras
+from .. import models
+from . import switchRespuesta
 
 
 #import models
@@ -18,12 +18,15 @@ class ChatBot(object):
     configurable = False
 
     def __init__(self, nombre):
+        Exception("despues de construct")
         self.vocabulario = { 
-                "V":list(map(lambda x:re.compile(x, re.IGNORECASE), regexPalabras.verbosP)) ,
-                "PI":list(map(lambda x:re.compile(x, re.IGNORECASE), regexPalabras.pronombreInterrogativos)) ,
-                "S": list(map(lambda x:re.compile(x, re.IGNORECASE), regexPalabras.sujetos ))
+                "V":list(map(lambda x:re.compile(x.wRegex, re.IGNORECASE), models.WordsRegex.objects.all().filter(wordsType = 'V'))) ,
+                "PI":list(map(lambda x:re.compile(x.wRegex, re.IGNORECASE), models.WordsRegex.objects.all().filter(wordsType = 'PI'))),
+                "S": list(map(lambda x:re.compile(x.wRegex, re.IGNORECASE), models.WordsRegex.objects.all().filter(wordsType = 'S')))
                 }
         self.nombre = nombre
+
+   
 #------------------------------------Funciones 
    
     #Analizadores lexicos: tienen como funcion recibir un mensaje 
@@ -52,7 +55,7 @@ class ChatBot(object):
 
     def busquedaPronombreInterrogativo (self, mensaje):
         for i in self.vocabulario["PI"]:
-            result=i.search(mensaje)
+            result= i.search(mensaje)
             if( result != None):
                 return result.re.pattern + "|"
         return ""
